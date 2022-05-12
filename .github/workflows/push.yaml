@@ -18,8 +18,8 @@ jobs:
 
       - uses: actions-ecosystem/action-release-label@v1
         id: release-label
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+        # with:
+        #   github_token: ${{ secrets.GITHUB_TOKEN }}
           # labels: ${{ steps.get-merged-pull-request.outputs.labels }}
 
       - uses: actions-ecosystem/action-get-latest-tag@v1
