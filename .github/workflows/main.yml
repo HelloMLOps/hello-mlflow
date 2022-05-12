@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    paths:
-      - 'charts/**'
+    # paths:
+    #   - 'charts/**'
 
 jobs:
   release:
@@ -30,3 +30,29 @@ jobs:
         uses: helm/chart-releaser-action@v1.4.0
         env:
           CR_TOKEN: "${{ secrets.TOKEN }}"
+
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v2
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: 'Get Previous tag'
+        id: previoustag
+        uses: "WyriHaximus/github-action-get-previous-tag@v1"
+        with:
+          fallback: 1.0.0 # Optional fallback tag to use when no tag can be found
+      -
+        name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      -
+        name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: hellomlops/mlflow:${{ steps.previoustag.outputs.tag }}
+      
