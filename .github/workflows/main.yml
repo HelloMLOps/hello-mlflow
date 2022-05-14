@@ -31,7 +31,6 @@ jobs:
         env:
           CR_TOKEN: "${{ secrets.TOKEN }}"
           GITHUB_TOKEN: "${{ secrets.TOKEN }}"
-
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
