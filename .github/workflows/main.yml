@@ -6,6 +6,7 @@ on:
       - main
     # paths:
     #   - 'charts/**'
+permissions: read-all|write-all
 
 jobs:
   release:
@@ -29,8 +30,7 @@ jobs:
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.4.0
         env:
-          CR_TOKEN: "${{ secrets.TOKEN }}"
-          GITHUB_TOKEN: "${{ secrets.TOKEN }}"
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
