@@ -24,7 +24,7 @@ serviceAccount:
   name: ""
 
 artifact:
-  ArtifactRoot: gs://hellomlops-mlflow/mlflow_artifacts/
+  ArtifactRoot: gs://wian-ai-lab-mlflow/mlflow_artifacts
   ArtifactRootSecret: ""
 
 
