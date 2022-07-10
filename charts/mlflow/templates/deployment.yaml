@@ -34,7 +34,7 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           workingDir: /mlflow
-          command: ["mlflow","server","-h","0.0.0.0","--backend-store-uri",'$BACKENDURI',"--default-artifact-root","{{ .Values.artifact.ArtifactRoot }}"]
+          command: ["mlflow","server","-h","0.0.0.0","--backend-store-uri",'$(BACKENDURI)',"--default-artifact-root","{{ .Values.artifact.ArtifactRoot }}"]
           envFrom:
           - secretRef:
               name: {{ .Values.backend.StorageUriSecret }}
