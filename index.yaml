@@ -3,6 +3,25 @@ entries:
   mlflow:
   - apiVersion: v2
     appVersion: 1.25.1
+    created: "2022-12-15T07:19:05.006044254Z"
+    description: Mlflow Helm Chart By HelloMLOPS
+    digest: 38c6e93ad36bbae1de6e7bf3fcd048620c06a5e52c63c9a734b12d504adf22db
+    icon: https://miro.medium.com/max/1400/0*UXWYFAW_ovWGuR2P.jpeg
+    keywords:
+    - mlflow
+    - kubernetes
+    - machine-learning
+    - mlops
+    name: mlflow
+    sources:
+    - https://github.com/HelloMLOps
+    - https://github.com/HelloMLOps/hello-mlflow
+    type: application
+    urls:
+    - https://github.com/rocket9-code/hello-mlflow/releases/download/mlflow-0.1.4/mlflow-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 1.25.1
     created: "2022-05-14T19:15:27.183873475Z"
     description: Mlflow Helm Chart By HelloMLOPS
     digest: 80425c4e3b79dc9b228e5e26a0875c741b2c9a1afd9d8b46eb5c464450510f03
@@ -20,4 +39,4 @@ entries:
     urls:
     - https://github.com/HelloMLOps/hello-mlflow/releases/download/mlflow-0.1.3/mlflow-0.1.3.tgz
     version: 0.1.3
-generated: "2022-05-14T19:15:27.183886975Z"
+generated: "2022-12-15T07:19:05.006056254Z"
