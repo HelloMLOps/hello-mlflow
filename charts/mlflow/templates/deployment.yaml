@@ -42,6 +42,14 @@ spec:
           - secretRef:
               name: {{ .Values.artifact.ArtifactRootSecret }}
           {{- end }}
+          {{- if .Values.envFromSecret }}
+          - secretRef:
+              name: {{ .Values.envFromSecret }}
+          {{- end }}
+          {{- if .Values.envFromconfigMap }}
+          - configMapRef:
+              name: {{ .Values.envFromconfigMap }}
+          {{- end }}
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}

@@ -27,6 +27,8 @@ artifact:
   ArtifactRoot: gs://wian-ai-lab-mlflow/mlflow_artifacts
   ArtifactRootSecret: ""
 
+envFromSecret: ""
+envFromconfigMap: ""
 
 backend:
   StorageUriSecret: secret-name
