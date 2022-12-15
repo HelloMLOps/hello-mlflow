@@ -1,7 +1,7 @@
 FROM continuumio/miniconda3
 RUN apt update && apt install python3-mysqldb default-libmysqlclient-dev  -yq
 RUN pip install mlflow==1.25.1
-RUN pip install protobuf==3.20
+RUN pip install protobuf==3.20.*
 # FOR AWS
 RUN pip install boto3==1.22.9
 #FOR GCP
